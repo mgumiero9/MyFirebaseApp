@@ -14,7 +14,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
 
     private Button mButtonSunny;
@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
+        onStart();
     }
 
-    private void initView() {
+    @Override
+    protected void onStart() {
+        super.onStart();
         mButtonSunny = (Button) findViewById(R.id.buttonSunny);
         mButtonFoggy = (Button) findViewById(R.id.buttonFoggy);
         mTextViewCondition = (EditText) findViewById(R.id.textViewCondition);
@@ -49,11 +51,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
+/*
         mButtonSunny.setOnClickListener(this);
-        mButtonFoggy.setOnClickListener(this);
+        mButtonFoggy.setOnClickListener(this);*/
     }
-
+/*
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
         }
-    }
+    }*/
 
     /*private void submit() {
         // validate

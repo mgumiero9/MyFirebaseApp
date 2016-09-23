@@ -34,5 +34,5 @@
         android:layout_above="@+id/buttonFoggy"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="59dp"
-        android:text="condition" />
+        android:text="Condition" />
 </RelativeLayout>
