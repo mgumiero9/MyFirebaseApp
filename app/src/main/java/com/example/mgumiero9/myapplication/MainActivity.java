@@ -40,14 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                
+                String text = dataSnapshot.getValue(String.class);
+                mTextViewCondition.setText(text);
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
 
             }
-        })
+        });
 
         mButtonSunny.setOnClickListener(this);
         mButtonFoggy.setOnClickListener(this);
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void submit() {
+    /*private void submit() {
         // validate
         String textViewConditionString = textViewCondition.getText().toString().trim();
         if (TextUtils.isEmpty(textViewConditionString)) {
@@ -76,5 +77,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // TODO validate success, do something
 
 
-    }
+    }*/
 }
